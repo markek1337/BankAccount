@@ -1,5 +1,4 @@
 package com.bank;
-import java.util.Random;
 
 public class BankAccountApp {
 
@@ -11,6 +10,8 @@ public class BankAccountApp {
 
         acc1.setName("Mark");
         System.out.println(acc1.getName());
+        acc1.setSurename("Petrov");
+        System.out.println(acc1.getSurename());
         acc1.makeDeposit(400);
         acc1.makeDeposit(500);
         acc1.payBill(1000);
@@ -26,6 +27,7 @@ class BankAccount implements  IInterest {
     private String accountNumber;   // ID + random 2-digit number + first 2 of SSN
     private static String routingNumber = "0045400657";
     private String name;
+    private String surename;
     private static int iD = 1000;   // Internal ID
     private String SSN;
     private double balance;
@@ -51,6 +53,14 @@ class BankAccount implements  IInterest {
 
     public String getName () {
         return name;
+    }
+
+    public void setSurename (String surename) {
+        this.surename = surename;
+    }
+
+    public String getSurename () {
+        return surename;
     }
 
     public void payBill (double amount) {
